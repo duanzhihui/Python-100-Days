@@ -47,10 +47,10 @@ class Musician(object):
 
 # 试一试下面的代码看看有什么区别
 # class Son(Monk, Father, Musician):
-# class Son(Musician, Father, Monk):
+ class Son(Musician, Father, Monk):
 
 
-class Son(Father, Monk, Musician):
+#class Son(Father, Monk, Musician):
 
     def __init__(self, name):
         Father.__init__(self, name)

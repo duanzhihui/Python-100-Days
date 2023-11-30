@@ -83,3 +83,21 @@ print(teacher.title)
         "city": "北京"
     }
 """
+
+'''
+teacher = csv2.Teacher(**result)
+
+这句代码是在创建一个`Teacher`对象，`csv2.Teacher(**result)`中的`**result`是Python中的解包操作。
+
+在Python中，`**`操作符用于将字典解包为关键字参数。在这个例子中，`result`是一个字典，它的键值对将被解包并作为关键字参数传递给`Teacher`类的构造函数。
+
+假设`result`字典如下：
+
+```python
+result = {'name': '骆昊', 'age': 38, 'title': '叫兽'}
+```
+
+那么`csv2.Teacher(**result)`等价于`csv2.Teacher(name='骆昊', age=38, title='叫兽')`。
+
+这样，`Teacher`类的构造函数就可以使用这些关键字参数来初始化新创建的`Teacher`对象。
+'''
