@@ -33,3 +33,17 @@ tasks = [wget(host) for host in hosts_list]
 # 下面的方法将异步I/O操作放入EventLoop直到执行完毕
 loop.run_until_complete(asyncio.wait(tasks))
 loop.close()
+
+'''
+这些代码片段主要展示了Python的异步I/O操作，特别是`asyncio`模块的使用。
+
+在`asyncio1.py`中，定义了一个名为`hello`的协程，它首先打印当前线程的信息，然后异步地等待2秒，再打印当前线程的信息。这个协程被调用两次并放入一个任务列表中，然后使用`asyncio.get_event_loop().run_until_complete(asyncio.wait(tasks))`来运行这些任务，直到所有任务完成。
+
+`asyncio2.py`中的代码与`asyncio1.py`非常相似，但是使用了`async`和`await`关键字，这是Python 3.5引入的新语法，用于定义协程和等待协程完成。
+
+`asyncio3.py`中的代码展示了如何使用`asyncio`模块进行网络I/O操作。定义了一个名为`wget`的协程，它首先打开一个到指定主机的连接，然后发送一个HTTP GET请求，读取响应头部，并打印出来。这个协程对每个在`hosts_list`中的主机进行操作，所有的协程都被放入一个任务列表中，然后使用`asyncio.get_event_loop().run_until_complete(asyncio.wait(tasks))`来运行这些任务，直到所有任务完成。
+
+总的来说，这些代码展示了Python的异步编程能力，特别是如何使用`asyncio`模块进行异步I/O操作。
+'''
+# centos 统计文件夹大小
+du -sh *
